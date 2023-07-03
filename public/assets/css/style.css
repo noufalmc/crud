@@ -1,0 +1,20 @@
+.add-new-link
+{
+    height: 40px;
+width: 138px;
+display: block;
+background-color: black;
+color: white;
+margin-top: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+text-decoration: none;
+}
+.add-new-link:hover
+{
+    background-color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
