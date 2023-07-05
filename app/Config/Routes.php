@@ -31,6 +31,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'CrudView::index');
 $routes->get('/add-new-record', 'CrudView::add_new');
+$routes->post('/add-new-record', 'CrudView::add_new');
+$routes->get('/edit/(:num)', 'CrudView::edit/$1');
+$routes->post('/edit/(:num)', 'CrudView::edit/$1');
+$routes->get('/delete/(:num)', 'CrudView::delete/$1');
 
 /*
  * --------------------------------------------------------------------

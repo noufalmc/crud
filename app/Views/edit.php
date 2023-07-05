@@ -15,15 +15,15 @@
     <div class="container">
         <h3>Add New Record</h3>
         <a class="add-new-link" href="<?php echo site_url("")?>">Home</a>
-        <form method="post" action="<?php echo site_url("add-new-record")?>">
+        <form method="post" action="<?php echo site_url("edit/".$user[0]['id'])?>">
         <div class="row">
             <div class="col-md-2">
                 <label>Enter Name</label>
-                <input type="text" class="form-control" placeholder="Enter Name" name="name">
+                <input type="text" class="form-control" placeholder="Enter Name" name="name" value="<?php echo $user[0]['username']?>">
             </div>
             <div class="col-md-2">
                 <label>Enter Mobile</label>
-                <input type="text" class="form-control" placeholder="Enter Mobile" name="mobile">
+                <input type="text" class="form-control" placeholder="Enter Mobile" name="mobile" value="<?php echo $user[0]['mobile']?>">
             </div>
             <div class="col-md-2">
                 <label>Blood Group</label>
@@ -32,8 +32,13 @@
                     <?php
                     foreach($blood_group as $value)
                     {
+                        $selected='';
+                        if($value['id']==$user[0]['blood_group'])
+                        {
+                            $selected='selected';
+                        }
                         ?>
-                        <option value="<?php echo $value['id']?>"><?php echo $value['name']?></option>
+                        <option <?php echo $selected?> value="<?php echo $value['id']?>"><?php echo $value['name']?></option>
                         <?php
                     }
                     ?>

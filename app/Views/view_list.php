@@ -21,15 +21,30 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Name</th>
+      <th scope="col">Blood Group</th>
       <th scope="col">Mobile No</th>
-      <th scope="col">Last Date Of Donaton</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
-    <tr></tr>
+    
+    <?php
+    foreach($user as $key =>$value)
+    {
+    ?>
+    <tr>
+    <td><?php echo $key+1?></td>
+    <td><?php echo $value->username?></td>
+    <td><?php echo $value->name?></td>
+    <td><?php echo $value->mobile?></td>
+    <td>
+    <a href="<?php echo site_url("edit/".$value->id)?>"><button>Edit</button></a>
+    <a href="<?php echo site_url("delete/".$value->id)?>"><button>Delete</button></a>
+    </td>
+    </tr>
+    <?php
+    }
+    ?>
 
   </tbody>
    </div> 
